@@ -16,14 +16,14 @@ public class PetClinic {
         // Create a list to hold pets
         List<Pet> pets = new ArrayList<>();
         // Add pets to the list
-        pets.add(new Dog("Rocky", 3, "Dog", "German"));
-        pets.add(new Dog("Mocha", 5, "Dog", "Labrador"));
-        pets.add(new Cat("Mitzi", 2, "Cat", "Tabby"));
-        pets.add(new Cat("Chili", 4, "Cat", "Black"));
+        pets.add(new Dog("Rocky", 3, "Canine", "German"));
+        pets.add(new Dog("Mocha", 5, "Canine", "Labrador"));
+        pets.add(new Cat("Mitzi", 2, "Feline", "Tabby"));
+        pets.add(new Cat("Chili", 4, "Feline", "Black"));
 
         // Create veterinarian instances
         Veterinarian generalVet = new GeneralVeterinarian("Dr. Smith");
-        Veterinarian specialistVet = new SpecialistVeterinarian("Dr. Jones", "Cat health");
+        Veterinarian specialistVet = new SpecialistVeterinarian("Dr. Jones", "feline health");
 
         // Demonstrate functionalities of pets and veterinarians
         for (Pet pet : pets) {
@@ -35,8 +35,8 @@ public class PetClinic {
             System.out.println("Eating habit: " + pet.eat());
             System.out.println(generalVet.getName() + ": " + generalVet.examinePet(pet));
 
-            // If the pet is a cat, also use the specialist veterinarian
-            if (pet instanceof Cat) {
+            // If the pet is a feline, also use the specialist veterinarian
+            if (pet.getSpecies().equals("Feline")) {
                 System.out.println(specialistVet.getName() + ": " + specialistVet.examinePet(pet));
             }
             System.out.println("-----------");
